@@ -34,6 +34,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
           M.toast({html: "Connexion réussie ", classes: "rounded green"})
           this.router.navigate(["/"])
         }
+      },
+      (error)=>{
+        M.toast({html:"Connexion Echouée",classes:" rounded yellow"})
       }
     )
   }

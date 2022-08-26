@@ -11,7 +11,7 @@ export class AuthService {
     return new Observable((observer) => {
       let isAuhtentificate: boolean = false
 
-      if (loginFormData.email === this.EMAIL || loginFormData.password == this.PASSWORD) {
+      if (loginFormData.email === this.EMAIL && loginFormData.password == this.PASSWORD) {
         localStorage.setItem("app_login", "yes")
         observer.next(true)
       } else {
