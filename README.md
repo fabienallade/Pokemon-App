@@ -18,8 +18,16 @@ du formulaire
 ## Formulaire pokémon
 ![img_2.png](img_2.png)
 
-## Technologie Utilisé
-- Angular 13
-- Joi
-- ng-particules
-- materilize css
+## Technologie Utilisée
+- Angular 13  (https://angular.io/)
+- Joi (https://www.npmjs.com/package/@hapi/joi)
+- ng-particules (https://www.npmjs.com/package/ng-particles)
+- materilize css (https://materializecss.com/)
+
+### Utilisation
+````
+npm install
+ng serve
+````
+
+--------

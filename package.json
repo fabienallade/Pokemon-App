@@ -1,6 +1,10 @@
 {
-  "name": "pokemon",
-  "version": "0.0.0",
+  "name": "pokemon-app",
+  "author": {
+    "name": "allade fabien",
+    "email": "alladefabien@gmail.com"
+  },
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
