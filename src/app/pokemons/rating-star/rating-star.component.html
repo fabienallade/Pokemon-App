@@ -1,0 +1,6 @@
+<div>
+  <span *ngFor="let ratingIndex of ratingArray; index as i"
+        [id]="'star_'+i" (click)="calculateRating(i+1)">
+    <i [class]="'mdi tiny ' + iconStatus(i)"></i>
+  </span>
+</div>

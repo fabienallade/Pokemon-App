@@ -1,0 +1,9 @@
+<div>
+  <h2 class="header center">
+    Ajouter un nouveau Pokemon
+  </h2>
+  <p class="center" *ngIf="pokemon.picture">
+    <img  [src]="pokemon.picture" alt="" imageNotFound>
+  </p>
+  <form-pokemon [pokemon]="pokemon" [action]="formTypeAction"></form-pokemon>
+</div>

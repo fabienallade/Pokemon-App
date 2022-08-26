@@ -18,6 +18,11 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/pokemon",
+            "allowedCommonJsDependencies": [
+              "materialize-css",
+              "jquery",
+              "@hapi/joi"
+            ],
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,9 +33,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/materialize-css/sass/materialize.scss",
+              "node_modules/@mdi/font/css/materialdesignicons.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/materialize-css/dist/js/materialize.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -98,7 +108,8 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           }
         }
       }

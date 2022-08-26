@@ -1,0 +1,36 @@
+<div class="row container">
+  <form (submit)="onSubmit()" (reset)="onResetForm()" #searchForm="ngForm">
+    <div class="card-panel">
+      <div class="row">
+        <div class="input-field">
+          <select name="type"
+                  id="type"
+                  [(ngModel)]="searchFormData.type"
+                  #type="ngModel"
+                  #selectTypeInput>
+            <option selected disabled value="">Choisissez un type de pokemon</option>
+            <option *ngFor="let type of pokemonTypes" value="{{type}}">
+              {{type}}
+            </option>
+          </select>
+          <label for="type">Type</label>
+        </div>
+        <div class="input-field">
+          <select name="rarete"
+                  #rarete="ngModel"
+                  [(ngModel)]="searchFormData.rarete"
+                  id="rarete"
+                  #rareteFormSelect>
+            <option value="" disabled selected> Choisissez une rareté</option>
+            <option *ngFor="let indexRarete of ([1,2,3,4,5]);index as i" [value]="indexRarete">{{indexRarete}}</option>
+          </select>
+          <label for="rarete">Rarete</label>
+        </div>
+        <div class="card-action input-field">
+          <button type="reset" class="waves-effect waves-light btn">Annuler</button>
+          <button type="submit" class="waves-effect waves-teal btn right"> Rechercher</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

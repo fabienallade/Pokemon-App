@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row" *ngIf="pokemon">
+
+    <div class="col m8 offset-m2">
+      <h2 class="header center">
+        {{pokemon.name}}
+      </h2>
+
+      <div class="card horizontal hoverable">
+        <div class="card-img">
+          <img [src]="pokemon.picture" alt="image">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <table class="bordered striped">
+              <tbody>
+              <tr>
+                <td>Nom</td>
+                <td><strong>{{pokemon.name}}</strong></td>
+              </tr>
+              <tr>
+                <td>Point de vie</td>
+                <td><strong>{{pokemon.hp}}</strong></td>
+              </tr>
+              <tr>
+                <td>Dégat</td>
+                <td><strong>{{pokemon.cp}}</strong></td>
+              </tr>
+              <tr>
+                <td>Types</td>
+                <td><span *ngFor="let type of pokemon.types" class="{{type | pokemonTypeColorPipe}}">
+               {{type}}
+            </span></td>
+              </tr>
+              <tr>
+                <td>Date de création</td>
+                <td><em>{{pokemon.created | date:"dd/MM/yy"}}</em></td>
+              </tr>
+              <tr>
+                <td>Rareté</td>
+                <td>
+                  <rating-star [readOnly]="false" [rating]="pokemon.rarete"></rating-star>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-action action-button">
+            <a class="waves-effect waves-light blue darken-2 btn right-align" (click)="goBack()">
+              <i class="mdi mdi-arrow-left"></i>
+              Retour</a>
+            <a class="waves-effect waves-light btn left-align" (click)="updatePokemon(pokemon)">
+              <i class="mdi mdi-square-edit-outline"></i>
+              Editer</a>
+            <a class="waves-effect waves-light red btn left-align" (click)="deletePokemon($event)">
+              <i class="mdi mdi-delete"></i>
+              Suprimer</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<h4 *ngIf="!pokemon" class="center">
+<!--  Aucun pokemon à afficher-->
+  <preloading></preloading>
+</h4>
+
+<div id="modal1" class="modal" #modalRef>
+  <div class="modal-content">
+    <h4>Information</h4>
+    <p>Etes vous sur de bien vouloir suprimer ce pokemon ?</p>
+  </div>
+  <div class="modal-footer">
+    <a class="modal-close waves-effect waves-green btn-flat" (click)="deletePokemon($event)">Oui</a>
+    <a class="modal-close waves-effect waves-teal btn-flat">Non</a>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class=" container center ">
+  <div class="row valign-wrapper h-85">
+    <form class="col m6 offset-m3 s12 l6 offset-l3" #loginForm="ngForm" (submit)="submitForm()">
+      <div class="card">
+        <div class="card-content">
+          <div class="row">
+            <h3>Login</h3>
+            <p class="center">
+              Email: <i>alladefabien@gmail.com</i>
+              <br>
+              Password: <i>fabien</i>
+            </p>
+          </div>
+          <div class="row">
+            <div class="input-field">
+              <i class="mdi mdi-account prefix"></i>
+              <input type="email"
+                     required
+                     [(ngModel)]="loginInfo.email"
+                     class="validate"
+                     [email]="true"
+                     name="email"
+                     id="email"
+                     #email="ngModel">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field">
+              <i class="prefix mdi mdi-lock"></i>
+              <input type="password"
+                     required
+                     minlength="4"
+                     [(ngModel)]="loginInfo.password"
+                     #password="ngModel"
+                     name="password"
+                     id="password">
+              <label for="password">Mot de Passe
+              </label>
+              <i class="mdi mdi-eye suffix waves-effect waves-light"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 ">
+              <button type="submit" [disabled]="loginForm.invalid" class="waves-effect waves-light btn col s12">
+                Se Connecter
+                <i class="mdi mdi-loading mdi-spin right" *ngIf="isLoading"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
